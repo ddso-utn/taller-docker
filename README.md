@@ -31,3 +31,18 @@ Taller Docker
 > Acceso y `kill`
 
 [docker_8_kill.webm](https://github.com/user-attachments/assets/cf8e9730-07e7-46e1-92bb-c2ec93dcd7ac)
+
+## Ejemplo con redis
+
+[docker_9_run_redis.webm](https://github.com/user-attachments/assets/6ffea274-d736-4d70-b16f-b7a93236c0e8)
+
+[docker_10_run_con_nombre.webm](https://github.com/user-attachments/assets/b66681eb-1d16-489b-812d-f3b1de37deaf)
+
+[docker_11_exec.webm](https://github.com/user-attachments/assets/37b71132-06e8-4348-995d-2655fa77fd7a)
+
+[docker_12_exec_vs_run.webm](https://github.com/user-attachments/assets/c839a4fe-da7e-4d23-8494-bb82fe2dc9b0)
+
+[docker_13_estado.webm](https://github.com/user-attachments/assets/ae776f88-7e02-409f-9d88-789e5e0b1688)
+
+
+##
