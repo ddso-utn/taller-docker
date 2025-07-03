@@ -1,0 +1,13 @@
+version: '3'
+services:
+  api:
+    image: hola-mundo-http
+    environment:
+      - SALUDO=Buen día
+    volumes:
+      - ./acercade.txt:/hola-mundo/acercade.txt
+    build: .
+    ports:
+      - "9090:8080"
+  contador:
+    image: redis

@@ -1,11 +1,14 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
-const port = 8080 ;
+const { createClient } = require('redis');
+
+let client
+const port = 8080;
 
 const archivoAcercaDe = "acercade.txt";
 
-app.get('/hola', (req, res) => {
+app.get('/hola', async (req, res) => {
   const quien = req.query.quien ?? 'Mundo';
 
   console.log(`Respondiendo al saludo de ${req.query.quien}`)
@@ -17,8 +20,18 @@ app.get('/hola', (req, res) => {
 
   res.send(`¡${saludo} ${quien}! ${acercaDe}`);
 
+  await client.incr('contador')
 });
 
-app.listen(port, () => {
+app.get('/visitas', async (req, res) => {
+  const contador = await client.get("contador")
+  res.send(`Hubo ${contador} visitas`);
+})
+
+app.listen(port, async () => {
+  client = await createClient({ url: "redis://contador" })
+    .on('error', err => console.log('Redis Client Error', err))
+    .connect();
+
   console.log(`Servidor iniciado en http://localhost:${port}`);
 });
