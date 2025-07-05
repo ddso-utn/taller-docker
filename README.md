@@ -22,6 +22,7 @@ Taller Docker
 - `COPY` y `RUN`
 - orden y compresión de capas
 - `.dockerignore`
+- `docker push`
 
 [docker_3_build.webm](https://github.com/user-attachments/assets/0db197ba-1660-4455-8422-fae5f7946fae)
 
@@ -76,10 +77,25 @@ Taller Docker
  - mapeo de directorios
  - mención a volúmenes
 
-
 ## Orquestación: docker compose
 
 - Variables de entorno
 - Volúmenes
 - Puertos y redes (si se llega)
-- Compose
+- archivo `docker-compose.yml`
+- comandos `up`, `up --build`, `down` y `stop`
+- Archivos multi contenedor
+
+
+```bash
+$ hola-mundo-http$ curl localhost:9090/hola
+¡Buen día Mundo! Hola Mundo Web
+$ hola-mundo-http$ curl localhost:9090/hola
+¡Buen día Mundo! Hola Mundo Web
+$ hola-mundo-http$ curl localhost:9090/visitas
+Hubo 1 visitas
+$ hola-mundo-http$ curl localhost:9090/hola
+¡Buen día Mundo! Hola Mundo Web
+$ hola-mundo-http$ curl localhost:9090/visitas
+Hubo 2 visitas
+```
