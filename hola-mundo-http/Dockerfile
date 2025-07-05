@@ -6,4 +6,6 @@ COPY index.js index.js
 
 RUN npm install
 
-ENTRYPOINT [ "node", "index.js" ]
+COPY init.sh init.sh
+
+ENTRYPOINT [ "/bin/sh", "init.sh" ]
